@@ -1,0 +1,59 @@
+{
+    "name": "S3 External Storage",
+    "description": "S3-compatible external storage integration for TadreebLMS. Configure local or S3 storage drivers to serve files from cloud storage.",
+    "version": "1.0.0",
+    "author": "TadreebLMS",
+    "integration_key": "EXTERNAL_STORAGE_INTEGRATION",
+    "metadata": {
+        "fields": {
+            "STORAGE_DRIVER": {
+                "label": "Storage Driver",
+                "type": "text",
+                "placeholder": "local or s3",
+                "required": true
+            },
+            "S3_ACCESS_KEY_ID": {
+                "label": "S3 Access Key ID",
+                "type": "text",
+                "placeholder": "Your S3 access key",
+                "required": false
+            },
+            "S3_SECRET_ACCESS_KEY": {
+                "label": "S3 Secret Access Key",
+                "type": "password",
+                "placeholder": "Your S3 secret key",
+                "required": false
+            },
+            "S3_DEFAULT_REGION": {
+                "label": "S3 Region",
+                "type": "text",
+                "placeholder": "us-east-1",
+                "required": false
+            },
+            "S3_BUCKET": {
+                "label": "S3 Bucket Name",
+                "type": "text",
+                "placeholder": "my-bucket",
+                "required": false
+            },
+            "S3_ENDPOINT": {
+                "label": "S3 Endpoint URL",
+                "type": "text",
+                "placeholder": "https://s3.amazonaws.com (optional, for S3-compatible services)",
+                "required": false
+            },
+            "S3_URL": {
+                "label": "S3 Custom URL",
+                "type": "text",
+                "placeholder": "Custom CDN URL (optional)",
+                "required": false
+            },
+            "S3_ROOT": {
+                "label": "S3 Root Path",
+                "type": "text",
+                "placeholder": "/ (optional prefix for all files)",
+                "required": false
+            }
+        }
+    }
+}
