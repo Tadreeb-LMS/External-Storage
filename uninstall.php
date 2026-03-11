@@ -8,7 +8,6 @@
  * This script:
  *   1. Removes the "manage external storage" Spatie permission
  *   2. Removes the "external-s3" disk from config/filesystems.php
- *   3. Removes copied helper files from the main app
  */
 
 use Illuminate\Support\Facades\File;
@@ -54,20 +53,6 @@ try {
     }
 } catch (\Exception $e) {
     Log::error('[ExternalStorage] Failed to remove external-s3 from filesystems.php: ' . $e->getMessage());
-}
-
-// ---------------------------------------------------------------------------
-// 3. Remove copied helper files
-// ---------------------------------------------------------------------------
-try {
-    $helpersDir = app_path('Helpers/ExternalStorage');
-
-    if (File::isDirectory($helpersDir)) {
-        File::deleteDirectory($helpersDir);
-        Log::info('[ExternalStorage] Removed app/Helpers/ExternalStorage/ directory.');
-    }
-} catch (\Exception $e) {
-    Log::error('[ExternalStorage] Failed to remove helper files: ' . $e->getMessage());
 }
 
 echo "External Storage module uninstalled successfully!\n";
