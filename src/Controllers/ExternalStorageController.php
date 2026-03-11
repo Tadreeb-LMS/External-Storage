@@ -70,8 +70,9 @@ class ExternalStorageController extends Controller
             'S3_ROOT'             => $request->input('s3_root', ''),
         ]);
 
-        return redirect('/external-apps/external-storage/settings')
-            ->with('success', 'Storage settings have been saved successfully.');
+        session()->flash('success', 'Storage settings have been saved successfully.');
+
+        return redirect()->back();
     }
 
     /**
